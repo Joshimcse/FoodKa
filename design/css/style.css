@@ -825,7 +825,7 @@ ol {
 }
 
 .feature-icon img {
-	width: 32px;
+	height: 22px;
 }
 
 .feature h2 {
@@ -1804,7 +1804,7 @@ ol {
 .cart-table {
 	padding: 40px 34px 0;
 	background: #f0f0f0;
-	border-radius: 27px;
+	border-radius: 5px;
 	overflow: hidden;
 }
 
@@ -2096,7 +2096,7 @@ ol {
 .checkout-cart {
 	background: #f0f0f0;
 	padding: 40px 24px 30px;
-	border-radius: 25px;
+	border-radius: 5px;
 }
 
 .checkout-cart h3 {
