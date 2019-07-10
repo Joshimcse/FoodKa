@@ -21,17 +21,24 @@ const registerController = (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
   if (!isValid) {
-    return res.json(errors);
+    return res.json({ success: false, msg: { ...errors } });
   }
 
   let { firstName, lastName, email, password, mobile } = req.body;
+
   // check email exist or not. If not exist then store to the database.
-  User.findOne({ email })
+  User.findOne({ $or: [{ email }, { mobile }] })
     .then(user => {
       if (user) {
-        errors.isAccount = true;
-        errors.msg = 'Account already exist';
-        return res.status(409).json(errors);
+        if (email == user.email) {
+          errors.email = 'Email already exist';
+        }
+
+        if (mobile == user.mobile) {
+          errors.mobile = 'Mobile Number is already exist';
+        }
+
+        return res.status(409).json({ success: false, msg: { ...errors } });
       }
 
       const avatar = gravatar.url(email, { s: '200', r: 'pg', d: 'mm' });
@@ -47,9 +54,12 @@ const registerController = (req, res) => {
       newUser
         .save()
         .then(user => res.status(201).json({ success: true, user }))
-        .catch(err => res.json({ success: false, errors: err }));
+        .catch(err => res.status(204).json({ success: false, errors: err }));
     })
-    .catch(err => res.json({ success: false, errors: err }));
+    .catch(err => {
+      console.log(err);
+      return res.json({ success: false, errors: err });
+    });
 };
 
 module.exports = {
