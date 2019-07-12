@@ -128,7 +128,6 @@ const logoutController = (req, res) => {
  * @desc 
  * @return
  */
-
 const authInfoController = (req, res) => {
   res.status(200).json({
     isAuth: true,
