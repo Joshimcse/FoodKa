@@ -1,5 +1,5 @@
 /**
- * Server.js
+ * server.js
  *
  * @description :: Main Server file also Entry point
  * @author      :: Joshim Uddin
@@ -7,28 +7,28 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
-
-require('dotenv').config();
+const cookieParser = require('cookie-parser');
 
 // set up express app
 const app = express();
 
 // Middleware
-app.use(morgan('dev'));
 
+// configure morgan for loggin
+app.use(require('morgan')('dev'));
+// .env configuration
+require('dotenv').config();
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
+// parse cookies
+app.use(cookieParser());
 
 // initialize routes
-// require('./routes/users')(app);
-app.use('/api/users', require('./routes/users'));
-
+app.use('/api/users', require('./routes/userRoutes'));
 
 // Error handling Middleware
-
 
 // listen for request
 const port = process.env.PORT || 3007;

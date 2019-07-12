@@ -29,7 +29,7 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  mobile: {
+  phone: {
     type: String,
     required: true
   },
@@ -69,15 +69,13 @@ const UserSchema = new Schema({
 });
 
 UserSchema.pre('save', function(next) {
-  let user = this;
-
   if (this.isModified('password')) {
     bcrypt.genSalt(SALT_I, (err, salt) => {
       if (err) return next(err);
 
-      bcrypt.hash(user.password, salt, (err, hash) => {
+      bcrypt.hash(this.password, salt, (err, hash) => {
         if (err) return next(err);
-        user.password = hash;
+        this.password = hash;
         next();
       });
     });
@@ -86,14 +84,14 @@ UserSchema.pre('save', function(next) {
   }
 });
 
-UserSchema.methods.comparePassword = (candidatePassword, cb) => {
+UserSchema.methods.comparePassword = function(candidatePassword, cb) {
   bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
     if (err) return cb(err);
     cb(null, isMatch);
   });
 };
 
-UserSchema.methods.generateResetToken = cb => {
+UserSchema.methods.generateResetToken = function(cb) {
   let user = this;
   crypto.randomBytes(20, (err, buffer) => {
     let token = buffer.toString('hex');
@@ -114,7 +112,7 @@ UserSchema.methods.generateResetToken = cb => {
   });
 };
 
-UserSchema.methods.generateToken = cb => {
+UserSchema.methods.generateToken = function(cb) {
   let user = this;
   let token = jwt.sign(user._id.toHexString(), process.env.SECRET);
 
@@ -125,7 +123,7 @@ UserSchema.methods.generateToken = cb => {
   });
 };
 
-UserSchema.statics.findByToken = (token, cb) => {
+UserSchema.statics.findByToken = function(token, cb) {
   let user = this;
   jwt.verify(token, process.env.SECRET, (err, decode) => {
     user.findOne({ _id: decode, token: token }, (err, user) => {

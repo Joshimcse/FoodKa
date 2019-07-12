@@ -9,7 +9,7 @@ module.exports = {
     data.firstName = !isEmpty(data.firstName) ? data.firstName.trim() : '';
     data.lastName = !isEmpty(data.lastName) ? data.lastName.trim() : '';
     data.email = !isEmpty(data.email) ? data.email.trim() : '';
-    data.mobile = !isEmpty(data.mobile) ? data.mobile.trim() : '';
+    data.phone = !isEmpty(data.phone) ? data.phone.trim() : '';
     data.password = !isEmpty(data.password) ? data.password.trim() : '';
     data.password2 = !isEmpty(data.password2) ? data.password2.trim() : '';
 
@@ -20,6 +20,7 @@ module.exports = {
     if (validator.isEmpty(data.firstName)) {
       errors.firstName = 'First Name field is required';
     }
+
     if (!validator.isLength(data.lastName, { min: 2, max: 20 })) {
       errors.lastName = 'Last Name must be between 2 and 30 characters.';
     }
@@ -36,14 +37,13 @@ module.exports = {
       errors.email = 'Email field is required';
     }
 
-    if (!isBdNumber(data.mobile)) {
-      errors.mobile = 'Mobile Number is invalid';
+    if (!isBdNumber(data.phone)) {
+      errors.phone = 'Phone Number is invalid';
     }
 
-    if (validator.isEmpty(data.mobile)) {
-      errors.mobile = 'Mobile Number field is required';
+    if (validator.isEmpty(data.phone)) {
+      errors.phone = 'Phone Number field is required';
     }
-
 
     if (validator.isEmpty(data.password)) {
       errors.password = 'Password field is required';
@@ -61,9 +61,46 @@ module.exports = {
       errors.confirmPassword = 'Confirm Password field is required';
     }
 
-    return {
-      errors,
-      isValid: isEmpty(errors)
+    const validationData = {
+      isValid: isEmpty(errors),
+      errors
     };
+
+    validationData.data = validationData.isValid ? data : null;
+
+    return validationData;
+  },
+
+  validateLoginInput: data => {
+    let errors = {};
+
+    data.emailOrPhone = !isEmpty(data.emailOrPhone)
+      ? data.emailOrPhone.trim()
+      : '';
+    data.password = !isEmpty(data.password) ? data.password.trim() : '';
+
+    if (
+      !validator.isEmail(data.emailOrPhone) &&
+      !isBdNumber(data.emailOrPhone)
+    ) {
+      errors.emailOrPhone = 'Email or Phone Number is not valid';
+    }
+
+    if (validator.isEmpty(data.emailOrPhone)) {
+      errors.emailOrPhone = 'Email or Phone Number must be required';
+    }
+
+    if (validator.isEmpty(data.password)) {
+      errors.password = 'Password field is required';
+    }
+
+    const validationData = {
+      isValid: isEmpty(errors),
+      errors
+    };
+
+    validationData.data = validationData.isValid ? data : null;
+
+    return validationData;
   }
 };

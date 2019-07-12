@@ -9,7 +9,6 @@
  * 008801911223344
  */
 const pattern = /((\+?880|00880)|0)\s?(13|14|15|16|17|18|19)\s?\d{2}(\s|\W)?\d{6}$/;
+module.exports = isBdNumber = phoneNumber => pattern.test(phoneNumber);
 
-const isBdNumber = value => pattern.test(value);
-
-module.exports = isBdNumber;
+// module.exports = isBdNumber;
