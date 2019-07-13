@@ -46,12 +46,14 @@ const registerController = (req, res) => {
 
       const avatar = gravatar.url(email, { s: '200', r: 'pg', d: 'mm' });
       const newUser = new User({
-        firstName,
-        lastName,
         email,
-        password,
         phone,
-        avatar
+        password,
+        profile: {
+          firstName,
+          lastName,
+          avatar
+        }
       });
 
       newUser
@@ -111,7 +113,7 @@ const loginController = (req, res) => {
 
 /**
  * @controller logoutController
- * @desc 
+ * @desc
  * @return
  */
 const logoutController = (req, res) => {
@@ -125,7 +127,7 @@ const logoutController = (req, res) => {
 
 /**
  * @controller authInfoController
- * @desc 
+ * @desc
  * @return
  */
 const authInfoController = (req, res) => {
@@ -133,7 +135,7 @@ const authInfoController = (req, res) => {
     isAuth: true,
     isAdmin: req.user.role === 0 ? false : true,
     user: {
-      name: req.user.firstName + ' ' + req.user.lastName,
+      name: req.user.profile.firstName + ' ' + req.user.profile.lastName,
       email: req.user.email,
       phone: req.user.phone,
       role: req.user.role,

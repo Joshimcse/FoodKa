@@ -17,14 +17,6 @@ require('dotenv').config();
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-  firstName: {
-    type: String,
-    required: true
-  },
-  lastName: {
-    type: String,
-    required: true
-  },
   email: {
     type: String,
     required: true
@@ -37,9 +29,24 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  avatar: {
-    type: String,
-    required: true
+  profile: {
+    firstName: {
+      type: String,
+      required: true
+    },
+    lastName: {
+      type: String,
+      required: true
+    },
+    avatar: {
+      type: String,
+      required: true
+    },
+    address: {
+      local: { type: String, default: '' },
+      city: { type: String, default: '' },
+      state: { type: String, default: '' }
+    }
   },
   cart: {
     type: Array,
@@ -133,4 +140,4 @@ UserSchema.statics.findByToken = function(token, cb) {
   });
 };
 
-module.exports = user = mongoose.model('user', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
