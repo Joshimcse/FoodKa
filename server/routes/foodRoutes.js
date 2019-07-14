@@ -9,7 +9,7 @@
 const router = require('express').Router();
 
 //Controller functionality
-const {} = require('../controllers/foodControllers');
+const {} = require('../controllers/foodControllers') ;
 
 /**
  * @route  GET api/foods/:id?related=true
