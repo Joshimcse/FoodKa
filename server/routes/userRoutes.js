@@ -1,5 +1,5 @@
 /**
- * users.js
+ * userRoutes.js
  *
  * @module      :: Routes
  * @description :: Users routes and action
@@ -36,14 +36,14 @@ router.post('/login', loginController);
 /**
  * @route  GET api/users/logout
  * @desc   
- * @access
+ * @access private
  */
 router.get('/logout', auth, logoutController);
 
 /**
  * @route  GET api/users/auth-info
  * @desc   
- * @access Public
+ * @access private
  */
 router.get('/auth-info', auth, authInfoController);
 
