@@ -11,7 +11,7 @@ module.exports = {
     data.email = !isEmpty(data.email) ? data.email.trim() : '';
     data.phone = !isEmpty(data.phone) ? data.phone.trim() : '';
     data.password = !isEmpty(data.password) ? data.password.trim() : '';
-    data.password2 = !isEmpty(data.password2) ? data.password2.trim() : '';
+    data.confirmPassword = !isEmpty(data.confirmPassword) ? data.confirmPassword.trim() : '';
 
     if (!validator.isLength(data.firstName, { min: 2, max: 20 })) {
       errors.firstName = 'First Name must be between 2 and 20 characters.';
