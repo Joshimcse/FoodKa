@@ -25,8 +25,11 @@ app.use(bodyParser.json());
 // parse cookies
 app.use(cookieParser());
 
-// initialize routes
+// initialize users routes
 app.use('/api/users', require('./routes/userRoutes'));
+
+// initialize foods routes
+app.use('/api/foods', require('./routes/foodRoutes'));
 
 // Error handling Middleware
 
