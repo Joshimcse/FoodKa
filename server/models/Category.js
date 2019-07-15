@@ -14,6 +14,10 @@ const CategorySchema = new Schema({
     type: String,
     unique: true,
     required: true
+  },
+  rank: {
+    type: Number,
+    required: true
   }
 });
 
