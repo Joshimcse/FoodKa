@@ -2,14 +2,17 @@
 /build
 /client/node_modules
 /dashboard/node_modules
+/extra
 
 .DS_Store
 .env
 
-package-lock.json
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 README.md
+admin.js
+package-lock.json
+endpoint

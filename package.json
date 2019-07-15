@@ -5,6 +5,7 @@
   "description": "online based restaurant",
   "main": "server.js",
   "scripts": {
+    "test": "mocha",
     "start": "node server/server.js",
     "server": "nodemon server/server.js",
     "client": "npm run start --prefix client",
@@ -50,6 +51,9 @@
     "validator": "^11.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.18.9",
+    "superagent": "^5.1.0"
   }
 }

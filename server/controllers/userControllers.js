@@ -76,8 +76,9 @@ const loginController = (req, res) => {
   const { errors, isValid, data } = validateLoginInput(req.body);
 
   if (!isValid) {
-    return res.json({ success: false, errors: errors });
+    return res.status(422).json({ isValid: false, errors: errors });
   }
+
   let { emailOrPhone, password } = data;
 
   User.findOne(
@@ -86,17 +87,17 @@ const loginController = (req, res) => {
       if (!user) {
         errors.emailOrPhone =
           "The email address or phone number that you've entered doesn't match any account.";
-        return res.status(404).json({ success: false, errors: errors });
+        return res.status(404).json({ isValid: true, isLoggedIn: false, errors: errors });
       }
 
       user.comparePassword(password, (err, isMatch) => {
         if (err) {
-          return res.json({ success: false, errors: err });
+          return res.status(500).json({ success: false, errors: err });
         }
 
         if (!isMatch) {
           errors.password = "The password that you've entered is incorrect";
-          return res.status(403).json({ success: false, errors: errors });
+          return res.status(403).json({ isValid: true, isLoggedIn: false, errors: errors });
         }
 
         user.generateToken((err, user) => {
@@ -104,7 +105,7 @@ const loginController = (req, res) => {
           res
             .cookie('w_auth', user.token)
             .status(200)
-            .json({ success: true, token: user.token });
+            .json({ isLoggedIn: true, token: user.token });
         });
       });
     }
