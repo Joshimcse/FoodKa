@@ -3,6 +3,7 @@
 /client/node_modules
 /dashboard/node_modules
 /extra
+/json
 
 .DS_Store
 .env
