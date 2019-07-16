@@ -49,7 +49,7 @@ const FoodSchema = new Schema({
   },
   images: {
     thumb: {
-      Type: String,
+      type: String,
       require: true
     },
     presentation: {
