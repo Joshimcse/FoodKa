@@ -9,13 +9,39 @@
 // Load Essential Model
 const Food = require('../models/Food');
 
+// utils
+const { foodSimplify } = require('../utils/utils');
+
 /**
  * @controller singleFoodController
- * @desc 
+ * @desc
  * @return
  */
 const singleFoodController = (req, res) => {
-  let isRelated = req.query.related.toLowerCase() === 'true' ? true : undefined;
+  let isRelated = req.query.related == 'true' ? true : undefined;
+  let id = req.params.id;
+
+  Food.findById(id)
+    .populate('category')
+    .then(food => {
+      if (!food) res.status(404).json({ success: false, message: 'Not Found' });
+
+      let targetFood = foodSimplify(food);
+
+      if (isRelated) {
+        Food.find({ category: food.category._id }).then(foods => {
+          if (foods.length > 0) {
+            let relatedFoods = foods.map(foodSimplify);
+            res.status(200).json({ success: true, targetFood, relatedFoods });
+          } else res.status(200).json({ success: true, targetFood });
+        });
+      } else {
+        res.status(200).json({ success: true, targetFood });
+      }
+    })
+    .catch(err =>
+      res.status(500).json({ success: false, message: err.message })
+    );
 };
 
 /**
@@ -25,7 +51,7 @@ const singleFoodController = (req, res) => {
  */
 const foodsController = (req, res) => {
   let category = req.query.category ? req.query.category : undefined;
-  let limit = req.query.limit ? parseInt(req.query.limit) : 12;
+  let limit = parseInt(req.query.limit) || 12;
 };
 
 /**
@@ -34,7 +60,7 @@ const foodsController = (req, res) => {
  * @return
  */
 const specialFoodsController = (req, res) => {
-  let limit = req.query.limit ? parseInt(req.query.limit) : 6;
+  let limit = parseInt(req.query.limit) || 6;
 };
 
 /**
@@ -44,7 +70,17 @@ const specialFoodsController = (req, res) => {
  */
 const topFoodsController = (req, res) => {
   let category = req.query.category ? req.query.category : undefined;
-  let limit = req.query.limit ? parseInt(req.query.limit) : 12;
+  let limit = parseInt(req.query.limit) || 12;
+
+  Food.find()
+    .sort({ sold: -1 })
+    .limit(limit)
+    .then(topFoods => {
+      res.status(200).json({ success: true, topFoods });
+    })
+    .catch(err => {
+      res.status(500).json({ success: false, errors: err });
+    });
 };
 
 module.exports = {

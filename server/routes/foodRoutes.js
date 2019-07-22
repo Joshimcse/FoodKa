@@ -9,15 +9,12 @@
 const router = require('express').Router();
 
 //Controller functionality
-const {} = require('../controllers/foodControllers') ;
-
-/**
- * @route  GET api/foods/:id?related=true
- * @param  related {boolean} - [optional]
- * @desc   Return single food by id. if related is true then produce a foods array same as.
- * @access Public
- */
-router.get('/:id', singleFoodController);
+const {
+  singleFoodController,
+  foodsController,
+  specialFoodsController,
+  topFoodsController
+} = require('../controllers/foodControllers');
 
 /**
  * @route  GET api/foods?category=fizza&limit=12
@@ -46,5 +43,13 @@ router.get('/specials', specialFoodsController);
  * @access Public
  */
 router.get('/top', topFoodsController);
+
+/**
+ * @route  GET api/foods/:id?related=true
+ * @param  related {boolean} - [optional]
+ * @desc   Return single food by id. if related is true then produce a foods array same as.
+ * @access Public
+ */
+router.get('/:id', singleFoodController);
 
 module.exports = router;

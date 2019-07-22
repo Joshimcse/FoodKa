@@ -24,7 +24,7 @@ const registerController = (req, res) => {
   const { isValid, errors, data } = validateRegisterInput(req.body);
 
   if (!isValid) {
-    return res.json({ success: false, errors: errors });
+    return res.status(422).json({ success: false, errors: errors });
   }
 
   let { firstName, lastName, email, password, phone } = data;
@@ -87,7 +87,9 @@ const loginController = (req, res) => {
       if (!user) {
         errors.emailOrPhone =
           "The email address or phone number that you've entered doesn't match any account.";
-        return res.status(404).json({ isValid: true, isLoggedIn: false, errors: errors });
+        return res
+          .status(404)
+          .json({ isValid: true, isLoggedIn: false, errors: errors });
       }
 
       user.comparePassword(password, (err, isMatch) => {
@@ -97,7 +99,9 @@ const loginController = (req, res) => {
 
         if (!isMatch) {
           errors.password = "The password that you've entered is incorrect";
-          return res.status(403).json({ isValid: true, isLoggedIn: false, errors: errors });
+          return res
+            .status(403)
+            .json({ isValid: true, isLoggedIn: false, errors: errors });
         }
 
         user.generateToken((err, user) => {

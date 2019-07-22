@@ -25,8 +25,10 @@ app.use(bodyParser.json());
 // parse cookies
 app.use(cookieParser());
 
-// initialize routes
+// initialize users routes
 app.use('/api/users', require('./routes/userRoutes'));
+// initialize foods routes
+app.use('/api/foods', require('./routes/foodRoutes'));
 
 // Error handling Middleware
 
@@ -37,12 +39,8 @@ app.listen(port, () => {
 
   // MongoDB configuration
   mongoose.Promise = global.Promise;
-  mongoose.connect(
-    process.env.MONGODB_URI,
-    { useNewUrlParser: true },
-    (err, res) => {
-      if (err) console.error(err);
-      else console.log('Connected to Database');
-    }
-  );
+  mongoose.connect(process.env.MONGODB_URI, (err, res) => {
+    if (err) console.error(err);
+    else console.log('Connected to Database');
+  });
 });
