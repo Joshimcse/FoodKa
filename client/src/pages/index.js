@@ -1,7 +1,9 @@
 // - Import npm packages
-import React from 'react'
+import React from "react";
 // - Custom Components/Interfaces
-import Hero from '../components/HeroSection'
+import Hero from "../components/HeroSection";
+import TopProduct from "../components/TopProduct";
+import Banner from "../components/Banner";
 
 // - Stylesheets
 
@@ -14,9 +16,10 @@ const IndexPage = () => {
 
   return (
     <>
-      {/* <Hero /> */}
+      <TopProduct />
+      <Banner />
     </>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

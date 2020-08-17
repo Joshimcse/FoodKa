@@ -1,6 +1,6 @@
 import React from "react";
 
-const Loading = () => {
+const LoadingComponent = () => {
   return (
     <>
       {/* Page Preloder  */}
@@ -11,4 +11,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default LoadingComponent;

@@ -3,7 +3,7 @@ import React from "react";
 import Loadable from "react-loadable";
 import { Route, Switch, withRouter, BrowserRouter } from "react-router-dom";
 // - Custom Components/Interfaces
-import LoadingComponent from "../components/loading";
+import LoadingComponent from "../components/LoadingComponent";
 
 const AsyncIndex = Loadable({
   loader: () => import("../pages"),
@@ -21,7 +21,7 @@ const AsyncCategory = Loadable({
 });
 
 const AsyncProduct = Loadable({
-  loader: () => import("../pages/category"),
+  loader: () => import("../pages/product"),
   loading: LoadingComponent,
 });
 
