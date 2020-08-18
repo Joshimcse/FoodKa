@@ -940,6 +940,21 @@ ol {
 	margin-right: 3px;
 }
 
+.product-item .pi-links a.add-card-mobile {
+	padding-top: 8px;
+	margin-right: 3px;
+}
+
+.product-item .pi-links a.add-card-mobile span {
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	position: absolute;
+	right: 19px;
+	top: 20px;
+	opacity: 0;
+}
+
 .product-item .pi-links a.add-card span {
 	font-size: 12px;
 	font-weight: bold;
@@ -959,6 +974,11 @@ ol {
 .product-item .pi-links a.add-card:hover .flaticon-bag,a.add-card span {
 	color: rgb(2, 133, 2)
 }
+
+.product-item .pi-links a.add-card-mobile:hover .flaticon-bag,a.add-card-mobile span {
+	color: rgb(2, 133, 2)
+}
+
 
 .product-item .pi-links a.wishlist-btn:hover .flaticon-heart {
 	color: rgb(224, 17, 17) !important;
