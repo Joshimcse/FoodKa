@@ -17,11 +17,11 @@ const Footer = () => {
   return (
     <>
       {/*  Footer section */}
-      <section class="footer-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-sm-6">
-              <div class="footer-widget about-widget text-center">
+      <section className="footer-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-3 col-sm-6">
+              <div className="footer-widget about-widget text-center">
                 <h2>About FoodKa</h2>
                 <p>
                   Are you hungry? Did you have a long and stressful day?
@@ -31,8 +31,8 @@ const Footer = () => {
                 <img src={cards} alt="" />
               </div>
             </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="footer-widget about-widget">
+            <div className="col-lg-3 col-sm-6">
+              <div className="footer-widget about-widget">
                 <h2>Supports</h2>
                 <ul>
                   <li>
@@ -73,24 +73,24 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="footer-widget contact-widget">
+            <div className="col-lg-3 col-sm-6">
+              <div className="footer-widget contact-widget">
                 <h2>Contacts</h2>
-                <div class="con-info">
+                <div className="con-info">
                   <span>C.</span>
                   <p>FoodKa Ltd</p>
                 </div>
-                <div class="con-info">
+                <div className="con-info">
                   <span>A.</span>
                   <p>
                     8/A/1 Satmosjid Housing Limited, Muhammadpur, Dhaka - 1207
                   </p>
                 </div>
-                <div class="con-info">
+                <div className="con-info">
                   <span>T.</span>
                   <p>+880 1777 363007</p>
                 </div>
-                <div class="con-info">
+                <div className="con-info">
                   <span>E.</span>
                   <p>foodka@gmail.com</p>
                 </div>

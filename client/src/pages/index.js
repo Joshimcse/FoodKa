@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "../components/HeroSection";
 import TopProduct from "../components/TopProduct";
 import Banner from "../components/Banner";
+import ProductSlider from "../components/ProductSlider";
 
 // - Stylesheets
 
@@ -16,6 +17,7 @@ const IndexPage = () => {
 
   return (
     <>
+      <ProductSlider />
       <TopProduct />
       <Banner />
     </>

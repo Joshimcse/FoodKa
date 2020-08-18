@@ -17,13 +17,13 @@ const index = () => {
   return (
     <>
       {/* <!-- Banner section --> */}
-      <section class="banner-section">
-        <div class="container">
-          <div class="banner set-bg" style={{backgroundImage: `url(${bgBannner})`}}>
-            <div class="tag-new">Spicy</div>
+      <section className="banner-section">
+        <div className="container">
+          <div className="banner set-bg" style={{backgroundImage: `url(${bgBannner})`}}>
+            <div className="tag-new">Spicy</div>
             <span>Just Yummy</span>
             <h2>Capricciosa Pizza</h2>
-            <a href="#" class="site-btn">
+            <a href="#" className="site-btn">
               ADD TO CART
             </a>
           </div>

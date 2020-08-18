@@ -5,7 +5,7 @@ const LoadingComponent = () => {
     <>
       {/* Page Preloder  */}
       <div id="preloder">
-        <div class="loader"></div>
+        <div className="loader"></div>
       </div>
     </>
   );

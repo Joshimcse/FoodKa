@@ -126,12 +126,12 @@ const category = (props) => {
                       style={{left: "0%", width: "100%"}}
                     ></div>
                     <span
-                      tabindex="0"
+                      tabIndex="0"
                       className="ui-slider-handle ui-corner-all ui-state-default"
                       style={{left: "0%"}}
                     ></span>
                     <span
-                      tabindex="0"
+                      tabIndex="0"
                       className="ui-slider-handle ui-corner-all ui-state-default"
                       style={{left: "100%"}}
                     ></span>

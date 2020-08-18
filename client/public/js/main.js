@@ -1,5 +1,5 @@
 'use strict';
-
+console.log('Hello from main js')
 
 $(window).on('load', function () {
 	/*------------------
