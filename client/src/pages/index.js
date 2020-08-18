@@ -1,5 +1,6 @@
 // - Import npm packages
 import React from "react";
+import { isMobile } from "react-device-detect";
 // - Custom Components/Interfaces
 import Hero from "../components/HeroSection";
 import TopProduct from "../components/TopProduct";
@@ -19,7 +20,7 @@ const IndexPage = () => {
     <>
       <ProductSlider />
       <TopProduct />
-      <Banner />
+      {isMobile ? null : <Banner />}
     </>
   );
 };
