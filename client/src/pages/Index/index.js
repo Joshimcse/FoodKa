@@ -23,8 +23,6 @@ const IndexPage = () => {
       ) : (
         <>
           <ProductSlider />
-          <TopProduct />
-          <Banner />
         </>
       )}
     </>
