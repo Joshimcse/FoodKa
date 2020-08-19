@@ -2,9 +2,6 @@
 import React from "react";
 // - Custom Components/Interfaces
 
-// - images
-import bgBannner from "../../assets/images/banner-bg.jpg";
-
 // - Stylesheets
 
 const index = () => {
@@ -19,7 +16,7 @@ const index = () => {
       {/* <!-- Banner section --> */}
       <section className="banner-section">
         <div className="container">
-          <div className="banner set-bg" style={{backgroundImage: `url(${bgBannner})`}}>
+          <div className="banner set-bg" style={{backgroundImage: `url("/assets/images/banner-bg.jpg")`}}>
             <div className="tag-new">Spicy</div>
             <span>Just Yummy</span>
             <h2>Capricciosa Pizza</h2>

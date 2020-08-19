@@ -2,9 +2,6 @@
 import React from "react";
 // - Custom Components/Interfaces
 
-// - images
-import cards from "../../assets/images/cards.png";
-
 // - Stylesheets
 
 const BrowserFooter = () => {
@@ -28,7 +25,7 @@ const BrowserFooter = () => {
                   Interested in getting a cheesy pizza delivered to your home or
                   office? Then FoodKa is the right destination for you!
                 </p>
-                <img src={cards} alt="" />
+                <img src="/assets/images/cards.png" alt="" />
               </div>
             </div>
             <div className="col-lg-3 col-sm-6">

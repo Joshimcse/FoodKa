@@ -4,14 +4,6 @@ import OwlCarousel from "react-owl-carousel";
 import {isMobile} from 'react-device-detect'
 // - Custom Components/Interfaces
 
-// - dummy images
-import productImage1 from "../../assets/images/product/5.jpg";
-import productImage2 from "../../assets/images/product/6.jpg";
-import productImage3 from "../../assets/images/product/7.jpg";
-import productImage4 from "../../assets/images/product/8.jpg";
-import productImage5 from "../../assets/images/product/9.jpg";
-import productImage6 from "../../assets/images/product/10.jpg";
-
 // - Stylesheets
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -32,7 +24,7 @@ const ProductSliderBrowser = () => {
         <OwlCarousel className="product-slider" loop margin={20} nav items={(isMobile) ? 2 : 4}>
           <div className="product-item">
             <div className="pi-pic">
-              <img src={productImage1} alt="" />
+              <img src="/assets/images/product/5.jpg" alt="" />
               <div className="pi-links">
                 <a href="#" className="add-card">
                   <i className="flaticon-bag"></i>
@@ -50,7 +42,7 @@ const ProductSliderBrowser = () => {
           </div>
           <div className="product-item">
             <div className="pi-pic">
-              <img src={productImage2} alt="" />
+              <img src="/assets/images/product/6.jpg" alt="" />
               <div className="pi-links">
                 <a href="#" className="add-card">
                   <i className="flaticon-bag"></i>
@@ -68,7 +60,7 @@ const ProductSliderBrowser = () => {
           </div>
           <div className="product-item">
             <div className="pi-pic">
-              <img src={productImage3} alt="" />
+              <img src="/assets/images/product/7.jpg" alt="" />
               <div className="pi-links">
                 <a href="#" className="add-card">
                   <i className="flaticon-bag"></i>
@@ -86,7 +78,7 @@ const ProductSliderBrowser = () => {
           </div>
           <div className="product-item">
             <div className="pi-pic">
-              <img src={productImage4} alt="" />
+              <img src="/assets/images/product/8.jpg" alt="" />
               <div className="pi-links">
                 <a href="#" className="add-card">
                   <i className="flaticon-bag"></i>
@@ -104,7 +96,7 @@ const ProductSliderBrowser = () => {
           </div>
           <div className="product-item">
             <div className="pi-pic">
-              <img src={productImage4} alt="" />
+              <img src="/assets/images/product/9.jpg" alt="" />
               <div className="pi-links">
                 <a href="#" className="add-card">
                   <i className="flaticon-bag"></i>
@@ -122,7 +114,7 @@ const ProductSliderBrowser = () => {
           </div>
           <div className="product-item">
             <div className="pi-pic">
-              <img src={productImage5} alt="" />
+              <img src="/assets/images/product/10.jpg" alt="" />
               <div className="pi-links">
                 <a href="#" className="add-card">
                   <i className="flaticon-bag"></i>
@@ -140,7 +132,7 @@ const ProductSliderBrowser = () => {
           </div>
           <div className="product-item">
             <div className="pi-pic">
-              <img src={productImage6} alt="" />
+              <img src="/assets/images/product/11.jpg" alt="" />
               <div className="pi-links">
                 <a href="#" className="add-card">
                   <i className="flaticon-bag"></i>

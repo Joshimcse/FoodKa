@@ -6,22 +6,22 @@ import { Route, Switch, withRouter, BrowserRouter } from "react-router-dom";
 import LoadingComponent from "../components/LoadingComponent";
 
 const AsyncIndex = Loadable({
-  loader: () => import("../pages"),
+  loader: () => import("../pages/Index"),
   loading: LoadingComponent,
 });
 
 const AsyncAbout = Loadable({
-  loader: () => import("../pages/about"),
+  loader: () => import("../pages/About/about"),
   loading: LoadingComponent,
 });
 
 const AsyncCategory = Loadable({
-  loader: () => import("../pages/category"),
+  loader: () => import("../pages/Category/category"),
   loading: LoadingComponent,
 });
 
 const AsyncProduct = Loadable({
-  loader: () => import("../pages/product"),
+  loader: () => import("../pages/ProductView/product"),
   loading: LoadingComponent,
 });
 

@@ -5,9 +5,6 @@ import { GrClose } from "react-icons/gr";
 import { isMobile } from "react-device-detect";
 // - Custom Components/Interfaces
 
-// - images
-import foodkaLogo from "../../assets/images/foodka50.png";
-
 // - Stylesheets
 import "./Header.css";
 
@@ -27,7 +24,7 @@ const Header = () => {
           {isSidebarOpend ? <GrClose /> : <GiHamburgerMenu />}
         </div>
         <div className="logo">
-          <img src={foodkaLogo} alt="" />
+          <img src="/assets/images/foodka50.png" alt="" />
         </div>
         <div className="search">
           <input type="text" />

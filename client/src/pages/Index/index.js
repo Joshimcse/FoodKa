@@ -2,10 +2,10 @@
 import React from "react";
 import { isMobile } from "react-device-detect";
 // - Custom Components/Interfaces
-import Hero from "../components/HeroSection";
-import TopProduct from "../components/TopProduct";
-import Banner from "../components/Banner";
-import ProductSlider from "../components/ProductSlider";
+import Hero from "../../components/HeroSection";
+import TopProduct from "../../components/TopProduct";
+import Banner from "../../components/Banner";
+import ProductSlider from "../../components/ProductSlider";
 
 // - Stylesheets
 
@@ -18,9 +18,15 @@ const IndexPage = () => {
 
   return (
     <>
-      <ProductSlider />
-      <TopProduct />
-      {isMobile ? null : <Banner />}
+      {isMobile ? (
+        <></>
+      ) : (
+        <>
+          <ProductSlider />
+          <TopProduct />
+          <Banner />
+        </>
+      )}
     </>
   );
 };

@@ -2,15 +2,6 @@
 import React from "react";
 // - Custom Components/Interfaces
 
-// - dummy images
-import productImage1 from "../../assets/images/product/5.jpg";
-import productImage2 from "../../assets/images/product/6.jpg";
-import productImage3 from "../../assets/images/product/7.jpg";
-import productImage4 from "../../assets/images/product/8.jpg";
-import productImage5 from "../../assets/images/product/9.jpg";
-import productImage6 from "../../assets/images/product/10.jpg";
-import productImage7 from "../../assets/images/product/11.jpg";
-import productImage8 from "../../assets/images/product/12.jpg";
 
 // - Stylesheets
 
@@ -47,7 +38,7 @@ const index = () => {
             <div className="col-lg-3 col-sm-6">
               <div className="product-item">
                 <div className="pi-pic">
-                  <img src={productImage1} alt="" />
+                  <img src="/assets/images/product/12.jpg" alt="" />
                   <div className="pi-links">
                     <a href="/" className="add-card">
                       <i className="flaticon-bag"></i>
@@ -68,7 +59,7 @@ const index = () => {
               <div className="product-item">
                 <div className="pi-pic">
                   <div className="tag-sale">ON SALE</div>
-                  <img src={productImage2} alt="" />
+                  <img src="/assets/images/product/12.jpg" alt="" />
                   <div className="pi-links">
                     <a href="/" className="add-card">
                       <i className="flaticon-bag"></i>
@@ -88,7 +79,7 @@ const index = () => {
             <div className="col-lg-3 col-sm-6">
               <div className="product-item">
                 <div className="pi-pic">
-                  <img src={productImage3} alt="" />
+                  <img src="/assets/images/product/12.jpg" alt="" />
                   <div className="pi-links">
                     <a href="/" className="add-card">
                       <i className="flaticon-bag"></i>
@@ -108,7 +99,7 @@ const index = () => {
             <div className="col-lg-3 col-sm-6">
               <div className="product-item">
                 <div className="pi-pic">
-                  <img src={productImage3} alt="" />
+                  <img src="/assets/images/product/12.jpg" alt="" />
                   <div className="pi-links">
                     <a href="/" className="add-card">
                       <i className="flaticon-bag"></i>
@@ -128,7 +119,7 @@ const index = () => {
             <div className="col-lg-3 col-sm-6">
               <div className="product-item">
                 <div className="pi-pic">
-                  <img src={productImage4} alt="" />
+                  <img src="/assets/images/product/12.jpg" alt="" />
                   <div className="pi-links">
                     <a href="/" className="add-card">
                       <i className="flaticon-bag"></i>
@@ -148,7 +139,7 @@ const index = () => {
             <div className="col-lg-3 col-sm-6">
               <div className="product-item">
                 <div className="pi-pic">
-                  <img src={productImage5} alt="" />
+                  <img src="/assets/images/product/12.jpg" alt="" />
                   <div className="pi-links">
                     <a href="/" className="add-card">
                       <i className="flaticon-bag"></i>
@@ -168,7 +159,7 @@ const index = () => {
             <div className="col-lg-3 col-sm-6">
               <div className="product-item">
                 <div className="pi-pic">
-                  <img src={productImage6} alt="" />
+                  <img src="/assets/images/product/12.jpg" alt="" />
                   <div className="pi-links">
                     <a href="/" className="add-card">
                       <i className="flaticon-bag"></i>
@@ -188,7 +179,7 @@ const index = () => {
             <div className="col-lg-3 col-sm-6">
               <div className="product-item">
                 <div className="pi-pic">
-                  <img src={productImage7} alt="" />
+                  <img src="/assets/images/product/12.jpg" alt="" />
                   <div className="pi-links">
                     <a href="/" className="add-card">
                       <i className="flaticon-bag"></i>
@@ -208,7 +199,7 @@ const index = () => {
             <div className="col-lg-3 col-sm-6">
               <div className="product-item">
                 <div className="pi-pic">
-                  <img src={productImage8} alt="" />
+                  <img src="/assets/images/product/12.jpg" alt="" />
                   <div className="pi-links">
                     <a href="/" className="add-card">
                       <i className="flaticon-bag"></i>
@@ -228,7 +219,7 @@ const index = () => {
             <div className="col-lg-3 col-sm-6">
               <div className="product-item">
                 <div className="pi-pic">
-                  <img src={productImage1} alt="" />
+                  <img src="/assets/images/product/12.jpg" alt="" />
                   <div className="pi-links">
                     <a href="/" className="add-card">
                       <i className="flaticon-bag"></i>
@@ -248,7 +239,7 @@ const index = () => {
             <div className="col-lg-3 col-sm-6">
               <div className="product-item">
                 <div className="pi-pic">
-                  <img src={productImage2} alt="" />
+                  <img src="/assets/images/product/12.jpg" alt="" />
                   <div className="pi-links">
                     <a href="/" className="add-card">
                       <i className="flaticon-bag"></i>
@@ -268,7 +259,7 @@ const index = () => {
             <div className="col-lg-3 col-sm-6">
               <div className="product-item">
                 <div className="pi-pic">
-                  <img src={productImage3} alt="" />
+                  <img src="/assets/images/product/12.jpg" alt="" />
                   <div className="pi-links">
                     <a href="/" className="add-card">
                       <i className="flaticon-bag"></i>
