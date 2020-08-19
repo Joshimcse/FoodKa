@@ -1,6 +1,7 @@
 // - Import npm packages
 import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineMore, AiOutlineSearch } from "react-icons/ai";
+import { GrMenu, GrClose, GrMoreVertical } from "react-icons/gr";
 // - Custom Components/Interfaces
 
 // - Stylesheets
@@ -17,20 +18,20 @@ const MobileHeader = () => {
     <header className="mobile-header">
       <div
         className="hamburger"
-        onClick={() => console.log('clicked')}
+        onClick={() => setIsLeftSidebarOpend(!isLeftSidebarOpend)}
       >
-        {isLeftSidebarOpend ? <AiOutlineClose /> : <AiOutlineMenu />}
+        {isLeftSidebarOpend ? <GrClose /> : <GrMenu />}
       </div
         
       >
       <form className="searchArea">
-        <input className="searchBox" />
+        <input type="text" placeholder="Search for foods (e.g. fizza, burger)" className="searchBox" />
         <button type="submit" className="searchBtn">
           <AiOutlineSearch />
         </button>
       </form>
       <div className="dots">
-        <AiOutlineMore />
+        <GrMoreVertical />
       </div>
     </header>
   );
