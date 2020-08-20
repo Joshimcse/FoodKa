@@ -1,35 +1,36 @@
-// - Import external components
-import { createStore, applyMiddleware, Store } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunk from "redux-thunk";
-import { routerMiddleware } from "react-router-redux";
-import createHistory from "history/createBrowserHistory";
-import createSagaMiddleware, { END } from "redux-saga";
-import { createLogger } from "redux-logger";
-import { rootReducer } from "store/reducers";
-import { fromJS, Map } from "immutable";
-// Create a history of your choosing (we're using a browser history in this case)
-export const history = createHistory();
+import createSagaMiddleware from "redux-saga";
+import { createBrowserHistory } from "history";
+import { applyMiddleware, compose, createStore } from "redux";
+import { routerMiddleware } from "connected-react-router";
+import rootReducer from "./reducers";
+import { rootSaga } from "./sagas";
 
-// Logger option for transforming immutable js
-const logger = createLogger({
-  stateTransformer: (state) => {
-    return state.toJS();
-  },
-});
+export const history = createBrowserHistory();
 
-const sagaMiddleware = createSagaMiddleware();
-// - initial state
-let initialState = {};
+const configureStoreDev = (initialState) => {
+  const sagaMiddleware = createSagaMiddleware();
+  const reactRouterMiddleware = routerMiddleware(history);
+  const middlewares = [
+    // Add other middleware on this line...
 
-// - Config and create store of redux
-const composeEnhancers = composeWithDevTools({
-  // Specify extension’s options like fullname, actionsBlacklist, actionsCreators, serialize...
-});
-let store = createStore(
-  rootReducer,
-  fromJS(initialState),
-  composeEnhancers(applyMiddleware(logger, thunk, routerMiddleware(history)))
-);
+    sagaMiddleware,
+    reactRouterMiddleware,
+  ];
 
-export default { store, history };
+  const composeEnhancers =
+    typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+      ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+          // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+        })
+      : compose;
+
+  const enhancer = composeEnhancers(
+    applyMiddleware(...middlewares)
+    // other store enhancers if any
+  );
+
+  const store = createStore(rootReducer(history), initialState, enhancer);
+  sagaMiddleware.run(rootSaga);
+  return store;
+};
+export default configureStoreDev;
