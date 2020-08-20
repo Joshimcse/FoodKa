@@ -61,11 +61,15 @@
   font-size: 25px;
   width: 40px;
   height: 40px;
-  top: 2px;
+  top: 3px;
   left: -2px;
   position: relative;
   padding: 0;
   cursor: pointer;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+}
+
+.mb-mobile-header {
+  margin-bottom: 30px;
 }

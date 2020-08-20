@@ -26,6 +26,8 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+  overscroll-behavior: contain;
+  overscroll-behavior-y: contain;
 }
 
 [tabindex="-1"]:focus {
@@ -543,4 +545,21 @@ button:focus, option:focus, select:focus {
   width: 100%;
   padding: 0 10px;
   display: flex;
+  flex-direction: column;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.mb-2 {
+  margin-bottom: 2em;
+}
+
+.mb-3 {
+  margin-bottom: 3em;
+}
+
+.mb-4 {
+  margin-bottom: 4em;
 }

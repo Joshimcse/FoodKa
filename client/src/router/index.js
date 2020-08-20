@@ -1,7 +1,7 @@
 // - Import npm packages
 import React from "react";
 import Loadable from "react-loadable";
-import { Route, Switch, withRouter, BrowserRouter } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 // - Custom Components/Interfaces
 import LoadingComponent from "../components/LoadingComponent";
 

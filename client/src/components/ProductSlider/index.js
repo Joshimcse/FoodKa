@@ -1,7 +1,6 @@
 // - Import npm packages
 import React from "react";
-import OwlCarousel from "react-owl-carousel";
-import { isMobile } from "react-device-detect";
+import { isMobileOnly } from "react-device-detect";
 // - Custom Components/Interfaces
 import ProductSliderMobile from "./ProductSliderMobile";
 import ProductSliderBrowser from "./ProductSliderBrowser";
@@ -15,7 +14,7 @@ const ProductSlider = () => {
 
   // - Custom methods & identifiers
 
-  return isMobile ? <ProductSliderMobile /> : <ProductSliderBrowser />;
+  return isMobileOnly ? <ProductSliderMobile /> : <ProductSliderBrowser />;
 };
 
 export default ProductSlider;

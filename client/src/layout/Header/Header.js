@@ -19,7 +19,10 @@ const DesktopHeader = () => {
     <>
       {/*  Header section */}
       <header className="header">
-        <div className="hamburger">
+        <div
+          className="hamburger"
+          onClick={() => setIsSidebarOpend(!isSidebarOpend)}
+        >
           {isSidebarOpend ? <GrClose /> : <GiHamburgerMenu />}
         </div>
         <div className="logo">

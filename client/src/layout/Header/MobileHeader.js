@@ -1,7 +1,6 @@
 // - Import npm packages
 import React, { useState } from "react";
-import { AiOutlineMenu, AiOutlineClose, AiOutlineMore, AiOutlineSearch } from "react-icons/ai";
-import { GrMenu, GrClose, GrMoreVertical } from "react-icons/gr";
+import { GrMenu, GrClose, GrMoreVertical, GrSearch } from "react-icons/gr";
 // - Custom Components/Interfaces
 
 // - Stylesheets
@@ -15,25 +14,30 @@ const MobileHeader = () => {
   // - Custom methods & identifiers
 
   return (
-    <header className="mobile-header">
-      <div
-        className="hamburger"
-        onClick={() => setIsLeftSidebarOpend(!isLeftSidebarOpend)}
-      >
-        {isLeftSidebarOpend ? <GrClose /> : <GrMenu />}
-      </div
-        
-      >
-      <form className="searchArea">
-        <input type="text" placeholder="Search for foods (e.g. fizza, burger)" className="searchBox" />
-        <button type="submit" className="searchBtn">
-          <AiOutlineSearch />
-        </button>
-      </form>
-      <div className="dots">
-        <GrMoreVertical />
-      </div>
-    </header>
+    <>
+      <header className="mobile-header">
+        <div
+          className="hamburger"
+          onClick={() => setIsLeftSidebarOpend(!isLeftSidebarOpend)}
+        >
+          {isLeftSidebarOpend ? <GrClose /> : <GrMenu />}
+        </div>
+        <form className="searchArea">
+          <input
+            type="text"
+            placeholder="Search for foods (e.g. fizza, burger)"
+            className="searchBox"
+          />
+          <button type="submit" className="searchBtn">
+            <GrSearch />
+          </button>
+        </form>
+        <div className="dots">
+          <GrMoreVertical />
+        </div>
+      </header>
+      <div className="mb-mobile-header">""</div>
+    </>
   );
 };
 
