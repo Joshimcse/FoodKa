@@ -1,23 +1,27 @@
-// - Import external components
-import * as redux from "redux";
-import { routerMiddleware } from "react-router-redux";
-import createHistory from "history/createBrowserHistory";
-import { rootReducer } from "store/reducers";
-import { fromJS } from "immutable";
-import { END } from "redux-saga";
-// Create a history of your choosing (we're using a browser history in this case)
-export const history = createHistory();
+import createSagaMiddleware from "redux-saga";
+import { createBrowserHistory } from "history";
+import { applyMiddleware, compose, createStore } from "redux";
+import { routerMiddleware } from "connected-react-router";
+import rootReducer from "./reducers";
+import { rootSaga } from "./sagas";
 
-// - Build the middleware for intercepting and dispatching navigation actions
-// const sagaMiddleware = createSagaMiddleware()
-// - initial state
-let initialState = {};
+export const history = createBrowserHistory();
 
-// - Config and create store of redux
-let store = redux.createStore(
-  rootReducer,
-  fromJS(initialState),
-  redux.compose(redux.applyMiddleware(routerMiddleware(history)))
-);
+const configureStoreProd = (initialState) => {
+  const sagaMiddleware = createSagaMiddleware();
+  const reactRouterMiddleware = routerMiddleware(history);
+  const middlewares = [
+    // Add other middleware on this line...
 
-export default { store, close: () => store.dispatch(END), history };
+    sagaMiddleware,
+    reactRouterMiddleware,
+  ];
+  const store = createStore(
+    rootReducer(history),
+    initialState,
+    compose(applyMiddleware(...middlewares))
+  );
+  sagaMiddleware.run(rootSaga);
+  return store;
+};
+export default configureStoreProd;
