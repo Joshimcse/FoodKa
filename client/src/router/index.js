@@ -25,10 +25,16 @@ const AsyncProduct = Loadable({
   loading: LoadingComponent,
 });
 
+const AsyncLogin = Loadable({
+  loader: () => import("../pages/Login"),
+  loading: LoadingComponent,
+});
+
 const Router = () => {
   return (
     <Switch>
       <Route exact path="/" component={AsyncIndex} />
+      <Route exact path="/login" component={AsyncLogin} />
       <Route exact path="/about" component={AsyncAbout} />
       <Route exact path="/:categories" component={AsyncCategory} />
       <Route exact path="/:categories/:title" component={AsyncProduct} />

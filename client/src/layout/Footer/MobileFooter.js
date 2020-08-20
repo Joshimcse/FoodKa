@@ -1,6 +1,11 @@
 // - Import npm packages
 import React from "react";
-import { MdGridOn, MdFavoriteBorder, MdShoppingCart, MdPerson } from "react-icons/md";
+import {
+  MdGridOn,
+  MdFavoriteBorder,
+  MdShoppingCart,
+  MdPerson,
+} from "react-icons/md";
 // - Custom Components/Interfaces
 
 // - Stylesheets
@@ -16,28 +21,36 @@ const MobileFooter = () => {
     <>
       <footer className="mobile-footer">
         <div className="mfooter-item">
-          <div className="mfooter-item-icon">
-            <MdGridOn />
-          </div>
-          <div className="mfooter-item-title">Home</div>
+          <a href="/">
+            <div className="mfooter-item-icon">
+              <MdGridOn />
+            </div>
+            <div className="mfooter-item-title">Home</div>
+          </a>
         </div>
         <div className="mfooter-item">
-          <div className="mfooter-item-icon">
-            <MdFavoriteBorder />
-          </div>
-          <div className="mfooter-item-title">Wishlist</div>
+          <a href="/">
+            <div className="mfooter-item-icon">
+              <MdFavoriteBorder />
+            </div>
+            <div className="mfooter-item-title">Wishlist</div>
+          </a>
         </div>
         <div className="mfooter-item">
-          <div className="mfooter-item-icon">
-            <MdShoppingCart />
-          </div>
-          <div className="mfooter-item-title">Cart</div>
+          <a href="/">
+            <div className="mfooter-item-icon">
+              <MdShoppingCart />
+            </div>
+            <div className="mfooter-item-title">Cart</div>
+          </a>
         </div>
         <div className="mfooter-item">
-          <div className="mfooter-item-icon">
-            <MdPerson />
-          </div>
-          <div className="mfooter-item-title">Dashboard</div>
+          <a href="/login">
+            <div className="mfooter-item-icon">
+              <MdPerson />
+            </div>
+            <div className="mfooter-item-title">Dashboard</div>
+          </a>
         </div>
       </footer>
     </>

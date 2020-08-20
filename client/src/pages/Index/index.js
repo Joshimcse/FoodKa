@@ -2,6 +2,7 @@
 import React from "react";
 import { isMobileOnly } from "react-device-detect";
 // - Custom Components/Interfaces
+import MobileHeader from "../../layout/Header/MobileHeader";
 import ProductSlider from "../../components/ProductSlider";
 
 // - Stylesheets
@@ -17,6 +18,7 @@ const IndexPage = () => {
     <>
       {isMobileOnly ? (
         <>
+          <MobileHeader />
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam
           voluptates accusamus eum est doloribus voluptatum voluptas dicta
           corrupti possimus sint fugiat aperiam, officiis at esse minima debitis

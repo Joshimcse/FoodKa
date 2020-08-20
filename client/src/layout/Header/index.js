@@ -14,7 +14,7 @@ const Header = () => {
 
   // - Custom methods & identifiers
 
-  return <>{isMobileOnly ? <MobileHeader /> : <DesktopHeader />}</>;
+  return <>{isMobileOnly ? "" : <DesktopHeader />}</>;
 };
 
 export default Header;
