@@ -1,7 +1,7 @@
 // - Import npm packages
 import React from "react";
 import OwlCarousel from "react-owl-carousel";
-import {isMobile} from 'react-device-detect'
+import {isMobileOnly} from 'react-device-detect'
 // - Custom Components/Interfaces
 
 // - Stylesheets
@@ -21,16 +21,16 @@ const ProductSliderBrowser = () => {
         <div className="section-title">
           <h2>FoodKa Specials</h2>
         </div>
-        <OwlCarousel className="product-slider" loop margin={20} nav items={(isMobile) ? 2 : 4}>
+        <OwlCarousel className="product-slider" loop margin={20} nav items={(isMobileOnly) ? 2 : 4}>
           <div className="product-item">
             <div className="pi-pic">
               <img src="/assets/images/product/5.jpg" alt="" />
               <div className="pi-links">
-                <a href="#" className="add-card">
+                <a href="/" className="add-card">
                   <i className="flaticon-bag"></i>
                   <span>ADD TO CART</span>
                 </a>
-                <a href="#" className="wishlist-btn">
+                <a href="/" className="wishlist-btn">
                   <i className="flaticon-heart"></i>
                 </a>
               </div>
@@ -44,11 +44,11 @@ const ProductSliderBrowser = () => {
             <div className="pi-pic">
               <img src="/assets/images/product/6.jpg" alt="" />
               <div className="pi-links">
-                <a href="#" className="add-card">
+                <a href="/" className="add-card">
                   <i className="flaticon-bag"></i>
                   <span>ADD TO CART</span>
                 </a>
-                <a href="#" className="wishlist-btn">
+                <a href="/" className="wishlist-btn">
                   <i className="flaticon-heart"></i>
                 </a>
               </div>
@@ -62,11 +62,11 @@ const ProductSliderBrowser = () => {
             <div className="pi-pic">
               <img src="/assets/images/product/7.jpg" alt="" />
               <div className="pi-links">
-                <a href="#" className="add-card">
+                <a href="/" className="add-card">
                   <i className="flaticon-bag"></i>
                   <span>ADD TO CART</span>
                 </a>
-                <a href="#" className="wishlist-btn">
+                <a href="/" className="wishlist-btn">
                   <i className="flaticon-heart"></i>
                 </a>
               </div>
@@ -80,11 +80,11 @@ const ProductSliderBrowser = () => {
             <div className="pi-pic">
               <img src="/assets/images/product/8.jpg" alt="" />
               <div className="pi-links">
-                <a href="#" className="add-card">
+                <a href="/" className="add-card">
                   <i className="flaticon-bag"></i>
                   <span>ADD TO CART</span>
                 </a>
-                <a href="#" className="wishlist-btn">
+                <a href="/" className="wishlist-btn">
                   <i className="flaticon-heart"></i>
                 </a>
               </div>
@@ -98,11 +98,11 @@ const ProductSliderBrowser = () => {
             <div className="pi-pic">
               <img src="/assets/images/product/9.jpg" alt="" />
               <div className="pi-links">
-                <a href="#" className="add-card">
+                <a href="/" className="add-card">
                   <i className="flaticon-bag"></i>
                   <span>ADD TO CART</span>
                 </a>
-                <a href="#" className="wishlist-btn">
+                <a href="/" className="wishlist-btn">
                   <i className="flaticon-heart"></i>
                 </a>
               </div>
@@ -116,11 +116,11 @@ const ProductSliderBrowser = () => {
             <div className="pi-pic">
               <img src="/assets/images/product/10.jpg" alt="" />
               <div className="pi-links">
-                <a href="#" className="add-card">
+                <a href="/" className="add-card">
                   <i className="flaticon-bag"></i>
                   <span>ADD TO CART</span>
                 </a>
-                <a href="#" className="wishlist-btn">
+                <a href="/" className="wishlist-btn">
                   <i className="flaticon-heart"></i>
                 </a>
               </div>
@@ -134,11 +134,11 @@ const ProductSliderBrowser = () => {
             <div className="pi-pic">
               <img src="/assets/images/product/11.jpg" alt="" />
               <div className="pi-links">
-                <a href="#" className="add-card">
+                <a href="/" className="add-card">
                   <i className="flaticon-bag"></i>
                   <span>ADD TO CART</span>
                 </a>
-                <a href="#" className="wishlist-btn">
+                <a href="/" className="wishlist-btn">
                   <i className="flaticon-heart"></i>
                 </a>
               </div>

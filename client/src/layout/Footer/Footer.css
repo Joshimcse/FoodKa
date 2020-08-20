@@ -1,0 +1,51 @@
+/* For All device */
+
+/* Desktop PC */
+
+/* Responsive */
+
+/* Mobile/Tab Devices */
+.mobile-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  color: #59818e;
+  box-shadow: 0 -1px 1px 0 rgba(0,0,0,.15);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 3;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mobile-footer .mfooter-item {
+  border-right: 1px solid #eee;
+  width: 25%;
+  text-align: center;
+}
+
+.mobile-footer .mfooter-item:hover {
+  cursor: pointer;
+}
+
+.mobile-footer .mfooter-item-icon {
+  display: inline-block;
+  font-size: 28px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-footer .mfooter-item-title {
+  font-size: 6px;
+}
+

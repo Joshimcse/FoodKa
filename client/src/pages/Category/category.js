@@ -1,12 +1,11 @@
 // - Import npm packages
 import React from "react";
-import { useParams } from "react-router-dom";
 // - Custom Components/Interfaces
 
 // - stylesheets
 
 // - constant
-import { categories } from "../../utils/constant";
+// import { categories } from "../../utils/constant";
 
 const category = (props) => {
   // - States (useState)
