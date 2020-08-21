@@ -12,9 +12,9 @@ const LoginSignupFeature = () => {
   // - Custom methods & identifiers
 
   return (
-    <div className="mobile-login">
-      <div className="login-header">
-        <div className="foodka-text">
+    <div className="mobile-auth-dashboard">
+      <div className="auth-header">
+        <div className="auth-text">
           <h1>foodka</h1>
           <p>
             Lorem ipsum dolor <br />

@@ -1,7 +1,7 @@
-.mobile-login {
+.mobile-auth-dashboard {
   width: 100%;
   height: 100vh;
-  background: #00233F;
+  background: #00233f;
   /* overflow: hidden; */
   /* position: fixed; */
   display: flex;
@@ -9,11 +9,11 @@
   flex-direction: column;
 }
 
-.mobile-login>div {
+.mobile-auth-dashboard > div {
   margin-bottom: 12px;
 }
 
-.login-header {
+.auth-header {
   background-image: url("/assets/images/food-delivery.png");
   /* background-color: #cccccc; */
   width: 100%;
@@ -26,19 +26,18 @@
   text-align: center;
 }
 
-.login-header .foodka-text {
+.auth-header .auth-text {
   padding: 80px 74px 0 76px;
-  
 }
 
-.login-header .foodka-text h1 {
+.auth-header .auth-text h1 {
   font-size: 35px;
-  color: #00233F;
+  color: #00233f;
 }
 
-.login-header .foodka-text p {
+.auth-header .auth-text p {
   font-size: 11px;
-  color: #00233F;
+  color: #00233f;
   text-transform: uppercase;
 }
 
@@ -65,30 +64,31 @@
 }
 
 .btn a {
- text-decoration: none;
- text-transform: uppercase;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-.mobile-login .login-btn, .signup-btn {
+.mobile-auth-dashboard .login-btn,
+.signup-btn {
   width: 230px;
   padding: 8px 0;
 }
 
-.mobile-login .login-btn {
+.mobile-auth-dashboard .login-btn {
   background: white;
 }
 
-.mobile-login .signup-btn {
-  background-image: linear-gradient(to right, #FF845D , #FE3A12);
+.mobile-auth-dashboard .signup-btn {
+  background-image: linear-gradient(to right, #ff845d, #fe3a12);
   /* background-repeat: no-repeat; */
 }
 
-.mobile-login .login-btn a {
-  color: #D24021;
+.mobile-auth-dashboard .login-btn a {
+  color: #d24021;
   font-weight: 600;
 }
 
-.mobile-login .signup-btn a {
+.mobile-auth-dashboard .signup-btn a {
   color: #fff;
   font-weight: 600;
 }
@@ -101,7 +101,8 @@
   text-align: center;
 }
 
-.social-login .fb, .google {
+.social-login .fb,
+.google {
   width: 105px;
 }
 
@@ -109,16 +110,15 @@
   display: flex;
 }
 
-.fb-google-btn >a {
+.fb-google-btn > a {
   margin: 2px 6px;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  padding: 8px 0px
+  padding: 8px 0px;
 }
 
-
-.fb-google-btn img{
+.fb-google-btn img {
   height: 16px;
   margin-top: -3px;
   margin-right: 6px;
@@ -129,12 +129,12 @@
   font-size: 13px;
 }
 
-.social-login .fb{
-  background: #4267B2;
+.social-login .fb {
+  background: #4267b2;
   color: #ffffff;
 }
 
-.social-login .google{
+.social-login .google {
   background: #ffffff;
-  color: #4081ED;
+  color: #4081ed;
 }

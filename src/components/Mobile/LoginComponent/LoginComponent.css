@@ -1,19 +1,17 @@
-.mobile-login {
+.mobile-login-area {
   width: 100%;
   height: 100vh;
   background: #f8f8f8;
-  /* overflow: hidden; */
-  /* position: fixed; */
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.mobile-login > div {
+.mobile-login-area > div {
   margin-bottom: 12px;
 }
 
-.login-header {
+.mobile-login-area .login-header {
   background-image: url("/assets/images/login-signup.png");
   /* background-color: #cccccc; */
   width: 100%;
@@ -52,7 +50,6 @@
   touch-action: manipulation;
   cursor: pointer;
   background-image: none;
-  /* border: 1px solid transparent; */
   padding: 6px 12px;
   font-size: 18px;
   line-height: 1.42857143;
@@ -80,7 +77,6 @@
 
 .mobile-login .signup-btn {
   background-image: linear-gradient(to right, #ff845d, #fe3a12);
-  /* background-repeat: no-repeat; */
 }
 
 .mobile-login .login-btn a {

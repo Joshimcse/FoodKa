@@ -14,7 +14,7 @@ const LoginComponent = () => {
 
   return (
     <>
-      <div className="mobile-login">
+      <div className="mobile-login-area">
         <div className="login-header"></div>
         <div className="login-container">
           <div className="login-box">
@@ -27,17 +27,17 @@ const LoginComponent = () => {
               <input type="password" name="password" />
             </div>
             <div style={{ width: "100%", marginBottom: "10px" }}>
-              <a href="" className="text-left link">
+              <a href="/" className="text-left link">
                 Forget Password
               </a>
             </div>
 
-            <a href="/" className="btn login">
+            <a href="/login" className="btn login">
               LOGIN
             </a>
           </div>
           <div style={{ width: "100%", marginBottom: "10px" }}>
-            <a href="" className="text-left link">
+            <a href="/signup" className="text-left link">
               CREATE AN ACCOUNT
             </a>
           </div>
