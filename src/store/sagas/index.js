@@ -1,8 +1,8 @@
 import { takeEvery } from "redux-saga/effects";
 
-import * as Tyoes from "../actions/actionTypes";
-import { authSaga } from "./authSaga";
+import * as Types from "../actions/actionTypes";
+import { loginSaga } from "./authSaga";
 
 export function* rootSaga() {
-  yield takeEvery(Tyoes.LOGIN_REQUEST, authSaga);
+  yield takeEvery(Types.LOGIN_REQUEST, loginSaga);
 }

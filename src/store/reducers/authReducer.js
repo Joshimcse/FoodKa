@@ -4,11 +4,10 @@ const init = {
   isAuthenticated: false,
   user: {},
   error: {
-    username: "",
+    emailOrPhone: "",
     password: "",
-    non_field_errors: "",
-    detail: "",
   },
+  response: "",
 };
 
 const authReducer = (state = init, action) => {
@@ -16,18 +15,20 @@ const authReducer = (state = init, action) => {
     case Types.LOGIN_SUCCESS: {
       return {
         ...state,
-        user: action.payload.user,
-        isAuthenticated: Object.keys(action.payload.user).length !== 0,
+        //user: action.payload.user,
+        isAuthenticated: action.payload.isLoggedIn,
         error: {},
+        response: "resolved",
       };
     }
     case Types.LOGIN_FAILURE: {
       return {
         ...state,
         error: action.payload,
+        response: "rejected",
       };
     }
-    case Types.LOGOUT_USER: {
+    case Types.LOGOUT_SUCCESS: {
       return {
         ...state,
         isAuthenticated: false,
