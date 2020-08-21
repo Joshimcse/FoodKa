@@ -3,8 +3,8 @@ import React from "react";
 // - Custom Components/Interfaces
 
 // - Stylesheets
-import "./Login.css";
-const index = () => {
+import "./LoginSignupFeature.css";
+const LoginSignupFeature = () => {
   // - States (useState)
 
   // - useEffect - (componentDidMount, componentDidUpdate & componentWillUnmount)
@@ -25,21 +25,21 @@ const index = () => {
         </div>
       </div>
       <div className="signup-btn btn">
-        <a href="/">CREATE AN ACCOUNT</a>
+        <a href="/signup">CREATE AN ACCOUNT</a>
       </div>
       <div className="login-btn btn">
-        <a href="/">LOGIN</a>
+        <a href="/login">LOGIN</a>
       </div>
 
       <div className="social-login">
         <p className="text-white">Connect With Other Ways</p>
         <div className="fb-google-btn">
         <a href="/" className="btn fb">
-          <img src="/assets/images/facebook.png" />
+          <img src="/assets/images/facebook.png" alt=""/>
           Facebook
         </a>
         <a href="/" className="btn google">
-          <img src="/assets/images/google.png" />
+          <img src="/assets/images/google.png" alt=""/>
           Google
         </a>
         </div>
@@ -48,4 +48,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default LoginSignupFeature;

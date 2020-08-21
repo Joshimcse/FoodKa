@@ -45,7 +45,7 @@ const MobileFooter = () => {
           </a>
         </div>
         <div className="mfooter-item">
-          <a href="/login">
+          <a href="/login-signup-feature">
             <div className="mfooter-item-icon">
               <MdPerson />
             </div>

@@ -2,18 +2,18 @@
 import React from "react";
 import { isMobileOnly } from "react-device-detect";
 // - Custom Components/Interfaces
-import DesktopHeader from "./Header";
-// - Stylesheets
-import "./Header.css";
+import LoginSignupFeature from "../../components/Mobile/LoginSignupFeature";
 
-const Header = () => {
+// - Stylesheets
+
+const index = () => {
   // - States (useState)
 
   // - useEffect - (componentDidMount, componentDidUpdate & componentWillUnmount)
 
   // - Custom methods & identifiers
 
-  return <>{isMobileOnly ? "" : <DesktopHeader />}</>;
+  return isMobileOnly ? <LoginSignupFeature /> : "";
 };
 
-export default Header;
+export default index;

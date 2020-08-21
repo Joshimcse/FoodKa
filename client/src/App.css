@@ -511,6 +511,7 @@ pre code {
 
 button {
   appearance: button;
+  writing-mode: horizontal-tb !important;
   -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
   color: -internal-light-dark(buttontext, rgb(170, 170, 170));

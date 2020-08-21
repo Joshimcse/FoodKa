@@ -1,7 +1,7 @@
 // - Import npm packages
-import React from 'react'
+import React from "react";
 // - Custom Components/Interfaces
-import Login from '../../components/Mobile/Login'
+import LoginComponent from "../../components/Mobile/LoginComponent";
 
 // - Stylesheets
 
@@ -14,9 +14,9 @@ const MobileLoginPage = () => {
 
   return (
     <>
-      <Login />
+      <LoginComponent />
     </>
-  )
-}
+  );
+};
 
-export default MobileLoginPage
+export default MobileLoginPage;
