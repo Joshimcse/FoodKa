@@ -8,7 +8,11 @@ export function* loginSaga(action) {
 
   try {
     const response = yield axios.post(base_url + "auth/login/", userInfo);
-    yield put(Actions.loginSuccess(response));
+    //console.log(response);
+    if (response.status >= 200 && response.status < 300) {
+      localStorage.setItem("token-Foodka", response.data.token);
+      yield put(Actions.loginSuccess(response.data));
+    }
   } catch (error) {
     //console.log(error);
     yield put(Actions.loginFailure(error));

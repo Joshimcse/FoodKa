@@ -5,7 +5,7 @@ const init = {
   user: {},
   token: "",
   error: {
-    emailOrPhone: "",
+    email: "",
     password: "",
   },
   response: "",

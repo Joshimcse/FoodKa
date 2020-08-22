@@ -1,9 +1,10 @@
 import * as Types from "./actionTypes";
+import jwtDecode from "jwt-decode";
 
 /**
  * Login with Log In Form
  */
-const Fields = ["emailOrPhone", "password"];
+const Fields = ["email", "password"];
 export const login = (userInfo) => {
   return {
     type: Types.LOGIN_REQUEST,
@@ -13,18 +14,24 @@ export const login = (userInfo) => {
 
 export const loginSuccess = (response) => {
   console.log(response);
+  const user = jwtDecode(response.token);
   return {
     type: Types.LOGIN_SUCCESS,
-    payload: response.responseBody,
+    payload: {
+      user: user,
+      token: response.token,
+      isLoggedIn: response.isLoggedIn,
+    },
   };
 };
 
 export const loginFailure = (error) => {
-  const err = error.responseBody.errors;
+  console.log(error.response.data);
+  const err = error.response.data.errors;
   const errorData = {};
   for (let item in Fields) {
     if (err.hasOwnProperty(Fields[item])) {
-      errorData[Fields[item]] = err[Fields[item]][0];
+      errorData[Fields[item]] = err[Fields[item]];
     } else {
       errorData[Fields[item]] = "";
     }
