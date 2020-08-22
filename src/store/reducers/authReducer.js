@@ -3,6 +3,7 @@ import * as Types from "../actions/actionTypes";
 const init = {
   isAuthenticated: false,
   user: {},
+  token: "",
   error: {
     emailOrPhone: "",
     password: "",
@@ -15,7 +16,8 @@ const authReducer = (state = init, action) => {
     case Types.LOGIN_SUCCESS: {
       return {
         ...state,
-        //user: action.payload.user,
+        user: action.payload.user,
+        token: action.payload.token,
         isAuthenticated: action.payload.isLoggedIn,
         error: {},
         response: "resolved",

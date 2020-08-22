@@ -7,8 +7,7 @@ const Fields = ["emailOrPhone", "password"];
 export const login = (userInfo) => {
   return {
     type: Types.LOGIN_REQUEST,
-    emailOrPhone: userInfo.emailOrPhone,
-    password: userInfo.password,
+    userInfo: userInfo,
   };
 };
 

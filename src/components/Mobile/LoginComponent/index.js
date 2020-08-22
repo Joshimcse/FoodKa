@@ -1,15 +1,22 @@
 // - Import npm packages
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 // - Custom Components/Interfaces
-
+import { login } from "../../../store/actions";
 // - Stylesheets
 import "./LoginComponent.css";
 
 const LoginComponent = () => {
   // - States (useState)
+  let data = {};
+  data.emailOrPhone = "joshimcse@gmail.com";
+  data.password = "123456";
+  const dispatch = useDispatch();
 
   // - useEffect - (componentDidMount, componentDidUpdate & componentWillUnmount)
-
+  useEffect(() => {
+    dispatch(login(data)); // will be called in onSubmit of the form
+  }, []);
   // - Custom methods & identifiers
 
   return (
