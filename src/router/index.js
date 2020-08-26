@@ -36,7 +36,7 @@ const AsyncLogin = Loadable({
 });
 
 const AsyncSignUp = Loadable({
-  loader: () => import("../pages/Login"),
+  loader: () => import("../pages/SignUp"),
   loading: LoadingComponent,
 });
 
@@ -44,7 +44,11 @@ const Router = () => {
   return (
     <Switch>
       <Route exact path="/" component={AsyncIndex} />
-      <Route exact path="/login-signup-feature" component={AsyncLoginSignupFeature} />
+      <Route
+        exact
+        path="/login-signup-feature"
+        component={AsyncLoginSignupFeature}
+      />
       <Route exact path="/login" component={AsyncLogin} />
       <Route exact path="/signup" component={AsyncSignUp} />
       <Route exact path="/about" component={AsyncAbout} />

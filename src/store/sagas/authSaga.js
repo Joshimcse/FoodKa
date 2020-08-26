@@ -18,3 +18,19 @@ export function* loginSaga(action) {
     yield put(Actions.loginFailure(error));
   }
 }
+
+export function* logoutSaga(action) {
+  const userInfo = action.userInfo;
+
+  try {
+    const response = yield axios.post(base_url + "auth/logout/", userInfo);
+    //console.log(response);
+    if (response.status >= 200 && response.status < 300) {
+      localStorage.removeItem("token-Foodka");
+      yield put(Actions.logoutSuccess(response.data));
+    }
+  } catch (error) {
+    //console.log(error);
+    yield put(Actions.logoutFailure(error));
+  }
+}

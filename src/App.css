@@ -606,10 +606,12 @@ select:focus {
   margin-bottom: -25px;
   padding: 5px 0;
   font-size: 0.8rem;
+  width: 270px;
 }
 .successMessage {
   color: #20a736;
   margin-bottom: -25px;
   padding: 5px 0;
   font-size: 0.8rem;
+  width: 270px;
 }

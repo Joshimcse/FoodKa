@@ -2,11 +2,10 @@
 import React from "react";
 import { isMobileOnly } from "react-device-detect";
 // - Custom Components/Interfaces
-import MobileLoginPage from "./MobileLoginPage";
-import LoginPage from "./LoginPage";
+import MobileSignUpPage from "./MobileSignUpPage";
+import SignUpPage from "./SignUpPage";
 
 // - Stylesheets
-import "./Login.css";
 
 const Login = () => {
   // - States (useState)
@@ -15,7 +14,7 @@ const Login = () => {
 
   // - Custom methods & identifiers
 
-  return isMobileOnly ? <MobileLoginPage /> : <LoginPage />;
+  return isMobileOnly ? <MobileSignUpPage /> : <SignUpPage />;
 };
 
 export default Login;
