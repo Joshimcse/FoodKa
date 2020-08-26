@@ -139,10 +139,10 @@
   margin-top: 10px;
 }
 .btn.loginBtn:focus {
-  opacity: 0.9;
+  opacity: 0.92;
 }
 .btn.loginBtn:disabled {
-  opacity: 0.8;
+  opacity: 0.9;
   cursor: not-allowed;
 }
 .login-left-background {
@@ -154,4 +154,5 @@
 }
 .login-form {
   padding: 30px 40px;
+  width: 370px;
 }

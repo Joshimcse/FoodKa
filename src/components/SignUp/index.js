@@ -6,95 +6,122 @@ import * as Yup from "yup";
 import TextError from "./TextError";
 import TextSuccess from "./TextSuccess";
 // - Custom Components/Interfaces
-import { login } from "../../store/actions";
+import { signUp } from "../../store/actions";
 // - Stylesheets
 import "./SignUpComponent.css";
 
-const LoginComponent = () => {
+const SignUpComponent = () => {
   // - States (useState)
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.authReducer.error);
-  const isAuthenticated = useSelector(
-    (state) => state.authReducer.isAuthenticated
-  );
+  const error = useSelector((state) => state.signupReducer.error);
+  const response = useSelector((state) => state.signupReducer.response);
+
   // - useEffect - (componentDidMount, componentDidUpdate & componentWillUnmount)
 
   // - Custom methods & identifiers
 
   return (
     <>
-      <div className="browser-login-area">
-        <div className="browser-login-container">
-          <div className="browser-login-box">
-            <div className="login-left-background"></div>
-            <div className="login-form">
+      <div className="browser-signup-area">
+        <div className="browser-signup-container">
+          <div className="browser-signup-box">
+            <div className="signup-left-background"></div>
+            <div className="signup-form">
               <div style={{ width: "50px", margin: "0 auto" }}>
                 <img src="foodka50.png" />
               </div>
               <Formik
                 initialValues={{
+                  name: "",
                   email: "",
                   password: "",
+                  confirmPassword: "",
                 }}
                 validationSchema={Yup.object({
+                  name: Yup.string(),
                   email: Yup.string()
                     .email("Invalid email address")
                     .required("Email is Required"),
-                  password: Yup.string().required("No password provided."),
+                  password: Yup.string()
+                    .required("No password provided.")
+                    .min(
+                      6,
+                      "Password is too short - should be 6 chars minimum."
+                    ),
+                  confirmPassword: Yup.string()
+                    .oneOf([Yup.ref("password"), null], "Passwords must match")
+                    .required("No password provided."),
                 })}
                 onSubmit={(values) => {
-                  dispatch(login(values));
+                  console.log(values);
+                  dispatch(signUp(values));
                 }}
               >
                 {(formik) => {
                   return (
                     <Form style={{ padding: "5px 5px 0px" }}>
                       <div className="browser-form-control">
-                        <label htmlFor="">Email</label>
-                        <Field name="email" type="text" />
+                        <Field name="name" type="text" placeholder="Name" />
+                        <ErrorMessage name="name" component={TextError} />
+                        {error.name && !formik.errors.name && (
+                          <TextError>{error.name}</TextError>
+                        )}
+                      </div>
+                      <br />
+                      <div className="browser-form-control">
+                        <Field name="email" type="text" placeholder="Email" />
                         <ErrorMessage name="email" component={TextError} />
                         {error.email && !formik.errors.email && (
                           <TextError>{error.email}</TextError>
                         )}
                       </div>
                       <br />
+
                       <div className="browser-form-control">
-                        <label htmlFor="">Password</label>
-                        <Field name="password" type="password" />
+                        <Field
+                          name="password"
+                          type="password"
+                          placeholder="Password"
+                        />
                         <ErrorMessage name="password" component={TextError} />
                         {error.password && !formik.errors.password && (
                           <TextError>{error.password}</TextError>
                         )}
-                        {isAuthenticated && !formik.errors.password && (
-                          <TextSuccess>Successfully Logged In</TextSuccess>
-                        )}
-                      </div>
-                      <div
-                        style={{
-                          width: "100%",
-                          marginBottom: "10px",
-                          marginTop: "15px",
-                        }}
-                      >
-                        <a href="/" className="text-left link">
-                          Forget Password
-                        </a>
                       </div>
 
                       <br />
+                      <div className="browser-form-control">
+                        <Field
+                          name="confirmPassword"
+                          type="password"
+                          placeholder="Confirm Password"
+                        />
+                        <ErrorMessage
+                          name="confirmPassword"
+                          component={TextError}
+                        />
+                        {error.confirmPassword &&
+                          !formik.errors.confirmPassword && (
+                            <TextError>{error.confirmPassword}</TextError>
+                          )}
+                        {response == "resolved" &&
+                          !formik.errors.confirmPassword && (
+                            <TextSuccess>Successfully Signed Up</TextSuccess>
+                          )}
+                      </div>
+                      <br />
                       <button
                         type="submit"
-                        className="btn loginBtn"
+                        className="btn signupBtn"
                         disabled={!(formik.isValid && formik.dirty)}
                       >
-                        LOG IN
+                        SIGN UP
                       </button>
                     </Form>
                   );
                 }}
               </Formik>
-
-              <div className="browser-social-login">
+              <div className="browser-social-signup">
                 <div className="fb-google-btn">
                   <a href="/" className="btn fb">
                     <img src="/assets/images/facebook.png" alt="" />
@@ -114,8 +141,8 @@ const LoginComponent = () => {
                   textAlign: "center",
                 }}
               >
-                <a href="/signup" className="link">
-                  CREATE AN ACCOUNT
+                <a href="/login" className="link">
+                  Already Have an Account? LOGIN
                 </a>
               </div>
             </div>
@@ -126,4 +153,4 @@ const LoginComponent = () => {
   );
 };
 
-export default LoginComponent;
+export default SignUpComponent;

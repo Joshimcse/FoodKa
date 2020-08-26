@@ -15,24 +15,19 @@ const Fields = [
 export const signUp = (userInfo) => {
   return {
     type: Types.SIGNUP_REQUEST,
-    firstName: userInfo.firstName,
-    lastName: userInfo.lastName,
-    email: userInfo.email,
-    phone: userInfo.phone,
-    password: userInfo.password,
-    confirmPassword: userInfo.confirmPassword,
+    userInfo: userInfo,
   };
 };
 
 export const signUpSuccess = (response) => {
   return {
     type: Types.SIGNUP_SUCCESS,
-    payload: response.responseBody,
+    payload: response,
   };
 };
 
 export const signUpFailure = (error) => {
-  const err = error.responseBody.errors;
+  const err = error.response.data.errors;
   const errorData = {};
   for (let item in Fields) {
     if (err.hasOwnProperty(Fields[item])) {

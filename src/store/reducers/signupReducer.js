@@ -17,7 +17,7 @@ const signupReducer = (state = init, action) => {
     case Types.SIGNUP_SUCCESS: {
       return {
         ...state,
-        response: "resolved",
+        response: action.payload.success ? "resolved" : "",
         error: {},
       };
     }

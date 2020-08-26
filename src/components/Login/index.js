@@ -31,6 +31,7 @@ const LoginComponent = () => {
               <div style={{ width: "50px", margin: "0 auto" }}>
                 <img src="foodka50.png" />
               </div>
+              <br />
               <Formik
                 initialValues={{
                   email: "",
@@ -50,8 +51,7 @@ const LoginComponent = () => {
                   return (
                     <Form style={{ padding: "5px 5px 0px" }}>
                       <div className="browser-form-control">
-                        <label htmlFor="">Email</label>
-                        <Field name="email" type="text" />
+                        <Field name="email" type="text" placeholder="Email" />
                         <ErrorMessage name="email" component={TextError} />
                         {error.email && !formik.errors.email && (
                           <TextError>{error.email}</TextError>
@@ -59,8 +59,11 @@ const LoginComponent = () => {
                       </div>
                       <br />
                       <div className="browser-form-control">
-                        <label htmlFor="">Password</label>
-                        <Field name="password" type="password" />
+                        <Field
+                          name="password"
+                          type="password"
+                          placeholder="Password"
+                        />
                         <ErrorMessage name="password" component={TextError} />
                         {error.password && !formik.errors.password && (
                           <TextError>{error.password}</TextError>
