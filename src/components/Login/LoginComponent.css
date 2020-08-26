@@ -62,6 +62,19 @@
 .fb-google-btn .google {
   flex-grow: 1;
 }
+.fb-google-btn .backBtn {
+  flex-grow: 1;
+}
+.fb-google-btn .submitBtn {
+  flex-grow: 1;
+  color: white;
+  background-color: rgb(65, 190, 65);
+}
+.fb-google-btn .submitBtn:focus {
+  flex-grow: 1;
+  color: white;
+  background-color: rgb(45, 158, 45);
+}
 .fb-google-btn > a {
   margin: 2px 6px;
   text-decoration: none;
@@ -69,7 +82,13 @@
   font-weight: 600;
   padding: 8px 0px;
 }
-
+.fb-google-btn > button {
+  margin: 2px 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 0px;
+}
 .fb-google-btn img {
   height: 16px;
   margin-top: -3px;

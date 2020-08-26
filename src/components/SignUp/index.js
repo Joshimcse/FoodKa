@@ -1,6 +1,7 @@
 // - Import npm packages
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import TextError from "./TextError";
@@ -141,9 +142,9 @@ const SignUpComponent = () => {
                   textAlign: "center",
                 }}
               >
-                <a href="/login" className="link">
+                <Link to="/login" className="link">
                   Already Have an Account? LOGIN
-                </a>
+                </Link>
               </div>
             </div>
           </div>
