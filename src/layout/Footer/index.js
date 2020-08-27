@@ -1,6 +1,6 @@
 // - Import npm packages
 import React from "react";
-import { isMobileOnly } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 // - Custom Components/Interfaces
 import MobileFooter from "./MobileFooter";
 import BrowserFooter from "./BrowserFooter";
@@ -15,7 +15,7 @@ const Footer = () => {
 
   // - Custom methods & identifiers
 
-  return isMobileOnly ? <MobileFooter /> : <BrowserFooter />;
+  return isMobile ? <MobileFooter /> : <BrowserFooter />;
 };
 
 export default Footer;

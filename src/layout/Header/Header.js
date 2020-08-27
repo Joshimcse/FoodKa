@@ -1,15 +1,17 @@
 // - Import npm packages
 import React, { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { GrClose } from "react-icons/gr";
+import styled from "styled-components";
+import { GrMenu, GrClose, GrMoreVertical, GrSearch } from "react-icons/gr";
+import { withRouter } from "react-router-dom";
 // - Custom Components/Interfaces
 
 // - Stylesheets
 import "./Header.css";
 
-const DesktopHeader = () => {
+const SearchBar = styled.input``;
+
+const DesktopHeader = (props) => {
   // - States (useState)
-  const [isSidebarOpend, setIsSidebarOpend] = useState(false);
 
   // - useEffect - (componentDidMount, componentDidUpdate & componentWillUnmount)
 
@@ -18,23 +20,41 @@ const DesktopHeader = () => {
   return (
     <>
       {/*  Header section */}
-      <header className="header">
-        <div
-          className="hamburger"
-          onClick={() => setIsSidebarOpend(!isSidebarOpend)}
-        >
-          {isSidebarOpend ? <GrClose /> : <GiHamburgerMenu />}
+      <header className="desktop-header">
+        <div className="hamburger">
+          <GrMenu style={{ color: "#ebc535 !important" }} />
         </div>
-        <div className="logo">
-          <img src="/assets/images/foodka50.png" alt="" />
+        <div className="header-logo">
+          <img
+            src="/foodka50.png"
+            width="40px"
+            alt="Foodka"
+            onClick={() => props.history.push("/")}
+          />
         </div>
-        <div className="search">
-          <input type="text" />
+        <form className="desktop-searchArea">
+          <input
+            type="text"
+            placeholder="Search for foods (e.g. pizza, burger)"
+            className="searchBox"
+          />
+          <button type="submit" className="searchBtn">
+            <GrSearch />
+          </button>
+        </form>
+        <div className="auth">
+          <div className="signin" onClick={() => props.history.push("/login")}>
+            Log In
+          </div>
+          <div className="signup" onClick={() => props.history.push("/signup")}>
+            Sign Up
+          </div>
         </div>
       </header>
+      <div className="mb-desktop-header">""</div>
       {/*  Header section end */}
     </>
   );
 };
 
-export default DesktopHeader;
+export default withRouter(DesktopHeader);

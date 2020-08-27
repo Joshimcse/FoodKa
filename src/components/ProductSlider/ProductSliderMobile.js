@@ -1,7 +1,7 @@
 // - Import npm packages
 import React from "react";
 import OwlCarousel from "react-owl-carousel";
-import {isMobileOnly} from 'react-device-detect'
+import { isMobile } from "react-device-detect";
 // - Custom Components/Interfaces
 
 // - Stylesheets
@@ -21,8 +21,13 @@ const ProductSliderMobile = () => {
         <div className="section-title">
           <h2>FoodKa Specials</h2>
         </div>
-        <OwlCarousel className="product-slider" loop margin={20} items={(isMobileOnly) ? 2 : 4}>
-        <div className="product-item">
+        <OwlCarousel
+          className="product-slider"
+          loop
+          margin={20}
+          items={isMobile ? 2 : 4}
+        >
+          <div className="product-item">
             <div className="pi-pic">
               <img src="/assets/images/product/5.jpg" alt="" />
               <div className="pi-links">

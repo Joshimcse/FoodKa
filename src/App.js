@@ -1,6 +1,6 @@
 // - Import npm packages
 import React from "react";
-import { isMobileOnly } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 // - Custom Components/Interfaces
 import Layout from "./layout";
 import Router from "./router";
@@ -9,7 +9,7 @@ import "./App.css";
 
 const App = () => {
   return (
-    <div className={isMobileOnly ? "mobile-layout" : "layout"}>
+    <div className={isMobile ? "mobile-layout" : "layout"}>
       <Layout>
         <Router />
       </Layout>

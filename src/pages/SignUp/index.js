@@ -1,6 +1,6 @@
 // - Import npm packages
 import React from "react";
-import { isMobileOnly } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 // - Custom Components/Interfaces
 import MobileSignUpPage from "./MobileSignUpPage";
 import SignUpPage from "./SignUpPage";
@@ -14,7 +14,7 @@ const Login = () => {
 
   // - Custom methods & identifiers
 
-  return isMobileOnly ? <MobileSignUpPage /> : <SignUpPage />;
+  return isMobile ? <MobileSignUpPage /> : <SignUpPage />;
 };
 
 export default Login;

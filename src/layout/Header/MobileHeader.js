@@ -25,7 +25,7 @@ const MobileHeader = () => {
         <form className="searchArea">
           <input
             type="text"
-            placeholder="Search for foods (e.g. fizza, burger)"
+            placeholder="Search for foods (e.g. pizza, burger)"
             className="searchBox"
           />
           <button type="submit" className="searchBtn">

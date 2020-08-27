@@ -1,6 +1,6 @@
 // - Import npm packages
 import React from "react";
-import { isMobileOnly } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 // - Custom Components/Interfaces
 import MobileHeader from "../../layout/Header/MobileHeader";
 import ProductSlider from "../../components/ProductSlider";
@@ -16,7 +16,7 @@ const IndexPage = () => {
 
   return (
     <>
-      {isMobileOnly ? (
+      {isMobile ? (
         <>
           <MobileHeader />
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam

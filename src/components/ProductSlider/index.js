@@ -1,6 +1,6 @@
 // - Import npm packages
 import React from "react";
-import { isMobileOnly } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 // - Custom Components/Interfaces
 import ProductSliderMobile from "./ProductSliderMobile";
 import ProductSliderBrowser from "./ProductSliderBrowser";
@@ -14,7 +14,7 @@ const ProductSlider = () => {
 
   // - Custom methods & identifiers
 
-  return isMobileOnly ? <ProductSliderMobile /> : <ProductSliderBrowser />;
+  return isMobile ? <ProductSliderMobile /> : <ProductSliderBrowser />;
 };
 
 export default ProductSlider;
