@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { GrMenu, GrClose, GrMoreVertical, GrSearch } from "react-icons/gr";
+import { AiOutlineMenu } from "react-icons/ai";
+
+import { MenuOutlined } from "@ant-design/icons";
 import { withRouter } from "react-router-dom";
 // - Custom Components/Interfaces
 
@@ -21,17 +24,18 @@ const DesktopHeader = (props) => {
     <>
       {/*  Header section */}
       <header className="desktop-header">
-        <div className="hamburger">
-          <GrMenu style={{ color: "#ebc535 !important" }} />
-        </div>
         <div className="header-logo">
           <img
             src="/foodka50.png"
-            width="40px"
+            width="45px"
             alt="Foodka"
             onClick={() => props.history.push("/")}
           />
         </div>
+        <div className="hamburger">
+          <MenuOutlined style={{ color: "#ebc535" }} />
+        </div>
+
         <form className="desktop-searchArea">
           <input
             type="text"

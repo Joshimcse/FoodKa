@@ -4,8 +4,9 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 // - Stylesheets
-
-const Layout = ({children}) => {
+import Sidebar from "./SideBar";
+import CartBar from "./CartBar";
+const Layout = ({ children }) => {
   // - States (useState)
 
   // - useEffect - (componentDidMount, componentDidUpdate & componentWillMount)
@@ -15,7 +16,19 @@ const Layout = ({children}) => {
   return (
     <>
       <Header />
-      {children}
+      <div>
+        <Sidebar />
+        <CartBar />
+        <div
+          style={{
+            marginLeft: "200px",
+            //width: "calc(100vw - 520px)",
+            marginRight: "300px",
+          }}
+        >
+          {children}
+        </div>
+      </div>
       <Footer />
     </>
   );

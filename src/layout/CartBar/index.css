@@ -1,0 +1,90 @@
+.sidenav2 {
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  top: 60px;
+  right: 0;
+  background-color: #f6faca;
+  border-right: 1px solid #e6e5b7;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav2 a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav2 a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav2 .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav2 {
+    padding-top: 15px;
+  }
+  .sidenav2 a {
+    font-size: 18px;
+  }
+}
+
+.shoppingCartButton {
+  cursor: pointer;
+  position: absolute;
+  /* left: -16px; */
+  top: 45%;
+
+  margin: auto;
+  height: 70px;
+  width: 16px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  color: #fff;
+  background-color: #b7b7b7;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.shoppingCartButton:hover {
+  background-color: #a3a3a3;
+}
+.shoppingCartButton:before {
+  content: "";
+  width: 15px;
+  height: 4px;
+  background: #fff;
+  display: block;
+  position: absolute;
+  -ms-transform: rotate(65deg);
+  -webkit-transform: rotate(65deg);
+  -moz-transform: rotate(65deg);
+  -o-transform: rotate(65deg);
+  transform: rotate(65deg);
+  margin-top: 26px;
+}
+.shoppingCartButton:after {
+  content: "";
+  width: 15px;
+  height: 4px;
+  background: #fff;
+  display: block;
+  position: absolute;
+  -ms-transform: rotate(-65deg);
+  -webkit-transform: rotate(-65deg);
+  -moz-transform: rotate(-65deg);
+  -o-transform: rotate(-65deg);
+  transform: rotate(-65deg);
+  margin-top: 38px;
+}

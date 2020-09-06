@@ -52,7 +52,9 @@ const IndexPage = () => {
         </>
       ) : (
         <>
-          <ProductSlider />
+          <div style={{ padding: "20px" }}>
+            <ProductSlider />
+          </div>
         </>
       )}
     </>

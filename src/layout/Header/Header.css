@@ -18,14 +18,15 @@
   align-items: center;
 }
 .desktop-header .header-logo {
-  width: 70px;
+  width: 150px;
   cursor: pointer;
+  padding-left: 20px;
 }
 .desktop-header .hamburger {
   display: inline-block;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
-  width: 70px;
+  width: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,7 +54,7 @@
   border-right: 1px solid #244b25;
 }
 .desktop-searchArea {
-  width: calc(100% - 340px);
+  width: calc(100% - 410px);
   margin-bottom: 4px;
 }
 
