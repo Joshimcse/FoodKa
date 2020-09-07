@@ -1,26 +1,15 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { SidebarContext } from "../../StoreContextAPI/actions/SidebarContext";
 import "./index.css";
 
-class SideBar extends React.Component {
-  state = { visible: false };
-
-  showDrawer = () => {
-    this.setState({
-      visible: true,
-    });
-  };
-
-  onClose = () => {
-    this.setState({
-      visible: false,
-    });
-  };
-
-  render() {
-    return (
-      <div id="mySidenav" style={{ width: "200px" }} className="sidenav"></div>
-    );
-  }
-}
+const SideBar = () => {
+  const { open } = useContext(SidebarContext);
+  return (
+    <div
+      id="mySidenav"
+      style={{ width: open.open ? "200px" : 0 }}
+      className="sidenav"
+    ></div>
+  );
+};
 export default SideBar;

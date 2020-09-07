@@ -1,14 +1,19 @@
 // - Import npm packages
-import React from "react";
+import React, { useContext } from "react";
 // - Custom Components/Interfaces
+import {
+  SidebarContext,
+  CartSidebarContext,
+} from "../StoreContextAPI/actions/";
 import Header from "./Header";
 import Footer from "./Footer";
-// - Stylesheets
 import Sidebar from "./SideBar";
 import CartBar from "./CartBar";
+// - Stylesheets
 const Layout = ({ children }) => {
   // - States (useState)
-
+  const { open } = useContext(SidebarContext);
+  const { CartSideBar } = useContext(CartSidebarContext);
   // - useEffect - (componentDidMount, componentDidUpdate & componentWillMount)
 
   // - Custom methods & identifiers
@@ -21,9 +26,9 @@ const Layout = ({ children }) => {
         <CartBar />
         <div
           style={{
-            marginLeft: "200px",
+            marginLeft: open.open ? "200px" : 0,
             //width: "calc(100vw - 520px)",
-            marginRight: "300px",
+            marginRight: CartSideBar.open ? "300px" : 0,
           }}
         >
           {children}

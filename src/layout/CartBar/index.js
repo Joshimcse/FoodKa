@@ -1,28 +1,20 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { CartSidebarContext } from "../../StoreContextAPI/actions/";
 import "./index.css";
 
-class SideBar extends React.Component {
-  state = { visible: false };
+const SideBar = () => {
+  const { CartSideBar, showCartSidebar, hideCartSidebar } = useContext(
+    CartSidebarContext
+  );
 
-  showDrawer = () => {
-    this.setState({
-      visible: true,
-    });
-  };
-
-  onClose = () => {
-    this.setState({
-      visible: false,
-    });
-  };
-
-  render() {
-    return (
-      <div id="mySidenav" style={{ width: "300px" }} className="sidenav2">
-        <div className="shoppingCartButton"></div>
-      </div>
-    );
-  }
-}
+  return (
+    <div
+      id="mySidenav"
+      style={{ width: CartSideBar.open ? "300px" : 0 }}
+      className="sidenav2"
+    >
+      <div className="shoppingCartButton" onClick={hideCartSidebar}></div>
+    </div>
+  );
+};
 export default SideBar;

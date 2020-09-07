@@ -1,13 +1,12 @@
 // - Import npm packages
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
-import { GrMenu, GrClose, GrMoreVertical, GrSearch } from "react-icons/gr";
-import { AiOutlineMenu } from "react-icons/ai";
+import { GrSearch } from "react-icons/gr";
 
 import { MenuOutlined } from "@ant-design/icons";
 import { withRouter } from "react-router-dom";
 // - Custom Components/Interfaces
-
+import { SidebarContext } from "../../StoreContextAPI/actions/";
 // - Stylesheets
 import "./Header.css";
 
@@ -15,7 +14,7 @@ const SearchBar = styled.input``;
 
 const DesktopHeader = (props) => {
   // - States (useState)
-
+  const { open, showLeftSidebar, hideLeftSidebar } = useContext(SidebarContext);
   // - useEffect - (componentDidMount, componentDidUpdate & componentWillUnmount)
 
   // - Custom methods & identifiers
@@ -32,7 +31,10 @@ const DesktopHeader = (props) => {
             onClick={() => props.history.push("/")}
           />
         </div>
-        <div className="hamburger">
+        <div
+          className="hamburger"
+          onClick={open.open ? hideLeftSidebar : showLeftSidebar}
+        >
           <MenuOutlined style={{ color: "#ebc535" }} />
         </div>
 

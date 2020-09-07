@@ -1,0 +1,8 @@
+/**
+ * Sidebars
+ */
+export const SHOW_CART_SIDEBAR = "SHOW_CART_SIDEBAR";
+export const HIDE_CART_SIDEBAR = "HIDE_CART_SIDEBAR";
+
+export const SHOW_LEFT_SIDEBAR = "SHOW_LEFT_SIDEBAR";
+export const HIDE_LEFT_SIDEBAR = "HIDE_LEFT_SIDEBAR";
